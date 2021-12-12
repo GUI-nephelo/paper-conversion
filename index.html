@@ -124,10 +124,12 @@
         var dst = str;
         (async () => {
           for (let i = 0; i < transList[mode].length; i++) {
+            setTimeout(()=>{
             var lang = transList[mode][i].split(" ");
             res = await translate(dst, lang[0], lang[1]);
             dst = res.trans_result[0].dst;
             log("result", dst);
+            },1000);
           }
           toTextELe.text(dst);
         })();
