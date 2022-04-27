@@ -112,7 +112,7 @@
             },
             success: (res) => {
               log("from: " + from, "; ", "to:" + to);
-              setTimeout(resolve(res),8000);
+              setTimeout(()=>{resolve(res)},8000);
             },
             error: () => {
               reject();
